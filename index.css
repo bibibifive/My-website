@@ -6,8 +6,16 @@
 }
 
 ::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--light-Text-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--light-Secondary-color);
+  border-radius: 4px;
 }
 
 a {
@@ -35,8 +43,8 @@ body {
   flex-direction: row;
   position: relative;
   position: fixed;
-  top: 800px;
-  right: 140px;
+  bottom: 80px;
+  right: 3%;
   background-color: var(--light-Secondary-color);
   width: 80px;
   height: 80px;
@@ -57,6 +65,16 @@ body {
   background-size: cover;
 }
 
+@media screen and (max-width: 1200px) {
+  .up-ball {
+    visibility: hidden;
+  }
+}
+@media screen and (max-width: 576px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
 header {
   width: 100%;
   height: calc(100vh/4);
@@ -280,6 +298,10 @@ nav .dark-Icon {
     border-radius: 6px;
     background-color: var(--light-Secondary-color);
   }
+
+  p {
+    color: var(--light-Text-color);
+  }
 }
 main {
   display: flex;
@@ -293,6 +315,44 @@ main {
   min-height: calc(100vh/4*3);
   margin: 0 auto;
   border-radius: 5px;
+}
+
+form {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+}
+
+input {
+  border: 3px solid var(--light-Text-color);
+  width: 500px;
+  height: 70px;
+  padding: 0 30px;
+  border-radius: 35px;
+  background-color: var(--light-Secondary-color);
+  font-size: 24px;
+}
+
+button {
+  border: 3px solid var(--light-Text-color);
+  position: absolute;
+  right: 10px;
+  width: 120px;
+  height: 50px;
+  border-radius: 35px;
+  background-color: var(--light-Main-color);
+  font-size: 24px;
+  font-weight: 500;
+  transition: 0.35s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--light-Text-color);
+  color: var(--light-Secondary-color);
 }
 
 @media screen and (max-width: 1200px) {
@@ -425,6 +485,7 @@ footer #di {
   margin: 0 auto;
   font-size: 12px;
   font-weight: 300;
+  color: var(--light-Text-color);
 }
 
 @media screen and (max-width: 1200px) {

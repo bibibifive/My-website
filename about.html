@@ -9,12 +9,13 @@
     <meta name="keywords" content="个人网站,设计师,personal website,designer">
     <meta name="description" content="我的个人网站包含主页,作品预览页,作品详情页,联系页面,个人简介页">
     <link rel="shortcut icon" href="img/Logo.svg" type="image/x-icon">
+    <script src="index.js"></script>
     <link rel="stylesheet" href="about.css">
     <title>关于 ZrT</title>
 </head>
 
 <body>
-    <a href="#" class="up-ball"></a>
+    <a href="javascript:window.scrollTo(0,0)" class="up-ball"></a>
     <header>
         <div>
             <img src="img/nav-mobile.png" alt="nav-mobile" id="nav-mobile">
@@ -35,9 +36,11 @@
             <a href="index.html"><img src="img/Logo.svg" alt="Logo" class="nav-Logo"></a>
             <p>En</p>
         </div>
+
+
         <div id="lightbox"></div>
         <div id="mobile-nav">
-            <img src="img/nav-Back.png" alt="nav-Back" class="nav-Back">
+            <img src="img/nav-Back.png" alt="nav-Back" id="nav-Back">
             <div>
                 <a href="about.html">About</a>
                 <a href="work.html">Work</a>
@@ -125,6 +128,38 @@
         </div>
         <div id="di">© AC Creative Corp. & SHIFTBRAIN Inc.</div>
     </footer>
+
+    <script>
+        // 导航
+        let mobile_nav = document.getElementById('mobile-nav');
+        // nav按钮
+        let nav_mobile = document.getElementById('nav-mobile');
+        // nav关闭
+        let nav_Back = document.getElementById('nav-Back');
+        // lightbox
+        let lightbox = document.getElementById('lightbox');
+
+        // nav打开
+        function mobile_nav_change() {
+            mobile_nav.style.left = '0';
+            lightbox.style.visibility = 'visible';
+            lightbox.style.opacity = '1';
+        }
+        // nav关闭
+        function mobile_nav_change_back() {
+            mobile_nav.style.left = '-70%';
+            lightbox.style.visibility = 'hidden';
+            lightbox.style.opacity = '0';
+        }
+
+
+        // 点击事件
+        nav_mobile.onclick = mobile_nav_change;
+        nav_Back.onclick = mobile_nav_change_back;
+    </script>
+
+
+
 </body>
 
 </html>

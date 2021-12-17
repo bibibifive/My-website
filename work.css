@@ -6,8 +6,16 @@
 }
 
 ::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--light-Text-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--light-Secondary-color);
+  border-radius: 4px;
 }
 
 a {
@@ -35,8 +43,8 @@ body {
   flex-direction: row;
   position: relative;
   position: fixed;
-  top: 800px;
-  right: 140px;
+  bottom: 80px;
+  right: 3%;
   background-color: var(--light-Secondary-color);
   width: 80px;
   height: 80px;
@@ -57,6 +65,16 @@ body {
   background-size: cover;
 }
 
+@media screen and (max-width: 1200px) {
+  .up-ball {
+    visibility: hidden;
+  }
+}
+@media screen and (max-width: 576px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
 header {
   width: 100%;
   height: calc(100vh/4);
@@ -279,6 +297,10 @@ nav .dark-Icon {
     height: 12px;
     border-radius: 6px;
     background-color: var(--light-Secondary-color);
+  }
+
+  p {
+    color: var(--light-Text-color);
   }
 }
 :root {
@@ -512,6 +534,7 @@ footer #di {
   margin: 0 auto;
   font-size: 12px;
   font-weight: 300;
+  color: var(--light-Text-color);
 }
 
 @media screen and (max-width: 1200px) {
